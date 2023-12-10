@@ -1,0 +1,41 @@
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Mon Nov 20 12:08:04 AM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Mon Nov 20 12:08:04 AM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Mon Nov 20 12:08:04 AM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Mon Nov 20 12:08:04 AM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Mon Nov 20 12:08:04 AM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Mon Nov 20 12:08:04 AM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Mon Nov 20 12:08:04 AM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Mon Nov 20 12:08:04 AM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-012.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/118503.txt
+Running...
++ tee /tmp/118503.txt
++ mpirun --map-by core --bind-to core ./distr-sched 5 2 4 0.50 tests/po.in
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 0ms of 13442ms (0.00000) - completed: 0 0 0 0 0
+Rank 1: 12541ms of 13432ms (0.93367) - completed: 6 5 10 2 5
+Rank 2: 13246ms of 13432ms (0.98615) - completed: 17 19 12 12 17
+Rank 3: 12147ms of 13432ms (0.90433) - completed: 15 11 12 5 17
+Rank 4: 12420ms of 13432ms (0.92466) - completed: 8 11 10 13 13
+Rank 5: 12808ms of 13432ms (0.95354) - completed: 13 6 11 7 8
+Rank 6: 12083ms of 13432ms (0.89957) - completed: 8 9 9 9 9
+Rank 7: 12312ms of 13432ms (0.91662) - completed: 10 6 9 4 13
+Overall: 87557ms of 107466ms (0.81474) - completed: 77 67 73 52 82
+FINAL RUNTIME: 13442ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/po_5_2_4_0.50.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[77, 67, 73, 52, 82]
+	Actual completed tasks:		[77, 67, 73, 52, 82]
+
+---> Sequential runtime:	78540 ms (extracted from reference output file tests/po_5_2_4_0.50.out)
+---> Your runtime:		13442 ms
+---> Speedup:			5.842880523731588x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.

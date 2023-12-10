@@ -1,0 +1,49 @@
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:03 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:03 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:03 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:03 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:03 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:03 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:03 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:03 PM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-012.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/103280.txt
+Running...
++ tee /tmp/103280.txt
++ mpirun --map-by core --bind-to core ./distr-sched 5 2 2 0.00 tests/lala.in
+Rank 0 completed
+Rank 1 completed
+Rank 2 completed
+Rank 3 completed
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 9392ms of 17745ms (0.52928) - completed: 10 10 6 10 5
+Rank 1: 6758ms of 17735ms (0.38105) - completed: 7 10 5 10 9
+Rank 2: 9617ms of 17735ms (0.54226) - completed: 7 6 8 7 12
+Rank 3: 5780ms of 17735ms (0.32591) - completed: 14 9 6 6 5
+Rank 4: 5788ms of 17735ms (0.32636) - completed: 7 6 6 9 11
+Rank 5: 8833ms of 17735ms (0.49805) - completed: 5 9 7 8 9
+Rank 6: 13603ms of 17735ms (0.76701) - completed: 11 4 10 7 6
+Rank 7: 6831ms of 17735ms (0.38517) - completed: 7 8 4 10 9
+Rank 4 completed
+Overall: 66602ms of 141890ms (0.46939) - completed: 68 62 52 67 66
+FINAL RUNTIME: 17745ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 5 completed
+Rank 6 completed
+Rank 7 completed
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/lala_5_2_2_0.00.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[68, 62, 52, 67, 66]
+	Actual completed tasks:		[68, 62, 52, 67, 66]
+
+---> Sequential runtime:	58453 ms (extracted from reference output file tests/lala_5_2_2_0.00.out)
+---> Your runtime:		17745 ms
+---> Speedup:			3.2940546632854324x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.

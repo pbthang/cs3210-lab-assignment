@@ -1,0 +1,37 @@
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX -c main.cpp -o main.o
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX -c runner.cpp -o runner.o
+runner.cpp:14:16: error: ambiguating new declaration of ‘std::vector<task_t> get_initial_tasks(params_t&)’
+   14 | vector<task_t> get_initial_tasks(params_t &params);
+      |                ^~~~~~~~~~~~~~~~~
+In file included from runner.cpp:1:
+runner.hpp:12:15: note: old declaration ‘std::queue<task_t> get_initial_tasks(params_t&)’
+   12 | queue<task_t> get_initial_tasks(params_t &params);
+      |               ^~~~~~~~~~~~~~~~~
+runner.cpp: In function ‘void run_all_tasks(int, int, metric_t&, params_t&)’:
+runner.cpp:45:50: error: conversion from ‘std::queue<task_t>’ to non-scalar type ‘std::vector<task_t>’ requested
+   45 |     vector<task_t> task_queue = get_initial_tasks(params);
+      |                                 ~~~~~~~~~~~~~~~~~^~~~~~~~
+runner.cpp: At global scope:
+runner.cpp:139:16: error: ambiguating new declaration of ‘std::vector<task_t> get_initial_tasks(params_t&)’
+  139 | vector<task_t> get_initial_tasks(params_t &params)
+      |                ^~~~~~~~~~~~~~~~~
+runner.hpp:12:15: note: old declaration ‘std::queue<task_t> get_initial_tasks(params_t&)’
+   12 | queue<task_t> get_initial_tasks(params_t &params);
+      |               ^~~~~~~~~~~~~~~~~
+runner.cpp: In function ‘void execute_tasks(metric_t&, std::vector<task_t>&, std::vector<task_t>&)’:
+runner.cpp:166:21: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<task_t>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  166 |   for (int i = 0; i < tasks.size(); ++i)
+      |                   ~~^~~~~~~~~~~~~~
+runner.cpp: In function ‘void get_task_displs(std::vector<int>&, std::vector<int>&)’:
+runner.cpp:191:21: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  191 |   for (int i = 0; i < send_counts.size(); ++i)
+      |                   ~~^~~~~~~~~~~~~~~~~~~~
+runner.cpp: In function ‘void print_tasks(std::string&&, std::vector<task_t>&)’:
+runner.cpp:205:21: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<task_t>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  205 |   for (int i = 0; i < arr.size(); ++i)
+      |                   ~~^~~~~~~~~~~~
+runner.cpp: In function ‘void print_arr(std::string&&, std::vector<int>&)’:
+runner.cpp:219:21: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  219 |   for (int i = 0; i < arr.size(); ++i)
+      |                   ~~^~~~~~~~~~~~
+make: *** [Makefile:53: runner.o] Error 1

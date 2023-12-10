@@ -1,0 +1,13 @@
+Job is running on soctf-pdc-024.d1.comp.nus.edu.sg, started at Mon Nov 20 04:15:02 AM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-024.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/120573.txt
+Running...
++ tee /tmp/120573.txt
++ mpirun --map-by core --bind-to core ./distr-sched-seq 10 1 2 0.1 tests/tinkywinky5.in
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 0ms of 2ms (0.00000) - completed: 0 0 0 0 0
+Overall: 0ms of 2ms (0.00000) - completed: 0 0 0 0 0
+FINAL RUNTIME: 2ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
++ set +x

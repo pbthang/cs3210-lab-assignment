@@ -1,0 +1,49 @@
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX -c main.cpp -o main.o
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX -c runner.cpp -o runner.o
+runner.cpp: In function ‘void run_all_tasks(int, int, metric_t&, params_t&)’:
+runner.cpp:88:16: warning: variable ‘task’ set but not used [-Wunused-but-set-variable]
+   88 |         task_t task = task_queue_copy.front();
+      |                ^~~~
+runner.cpp:125:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  125 |         for (int i = 0; i < worker_procs.size(); ++i)
+      |                         ~~^~~~~~~~~~~~~~~~~~~~~
+runner.cpp:137:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  137 |       for (int i = 0; i < worker_procs.size(); ++i)
+      |                       ~~^~~~~~~~~~~~~~~~~~~~~
+runner.cpp:153:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  153 |       for (int i = 0; i < worker_procs.size(); ++i)
+      |                       ~~^~~~~~~~~~~~~~~~~~~~~
+runner.cpp:31:9: warning: unused variable ‘iter’ [-Wunused-variable]
+   31 |     int iter = 0;
+      |         ^~~~
+runner.cpp: In function ‘void print_arr(std::string&&, std::vector<int>&)’:
+runner.cpp:258:21: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  258 |   for (int i = 0; i < arr.size(); ++i)
+      |                   ~~^~~~~~~~~~~~
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX -DDEBUG=0 -c tasks.cpp -o tasks.0.o
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX main.o runner.o tasks.0.o -o distr-sched -lm
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX -DDEBUG=1 -c tasks.cpp -o tasks.1.o
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX main.o runner.o tasks.1.o -o distr-sched-debug1 -lm
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX -DDEBUG=2 -c tasks.cpp -o tasks.2.o
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX main.o runner.o tasks.2.o -o distr-sched-debug2 -lm
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX   -c -o runner_seq.o runner_seq.cpp
+runner_seq.cpp: In function ‘void run_all_tasks(int, int, metric_t&, params_t&)’:
+runner_seq.cpp:13:34: warning: unused parameter ‘num_procs’ [-Wunused-parameter]
+   13 | void run_all_tasks(int rank, int num_procs, metric_t &stats, params_t &params)
+      |                              ~~~~^~~~~~~~~
+mpic++ -Wall -Wextra -Wpedantic -std=c++20 -O3 -DOMPI_SKIP_MPICXX main.o runner_seq.o tasks.1.o -o distr-sched-seq -lm
+Submitted batch job 118567
+Submitted batch job 118568
+Submitted batch job 118569
+Submitted batch job 118570
+Submitted batch job 118571
+Submitted batch job 118572
+Submitted batch job 118573
+Submitted batch job 118575
+Submitted batch job 118576
+Submitted batch job 118577
+Submitted batch job 118578
+Submitted batch job 118579
+Submitted batch job 118580
+Submitted batch job 118581
+Submitted batch job 118582

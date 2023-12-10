@@ -1,0 +1,41 @@
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Mon Nov 20 12:07:15 AM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Mon Nov 20 12:07:15 AM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Mon Nov 20 12:07:15 AM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Mon Nov 20 12:07:15 AM +08 2023
+Job is running on soctf-pdc-014.d1.comp.nus.edu.sg, started at Mon Nov 20 12:07:15 AM +08 2023
+Job is running on soctf-pdc-014.d1.comp.nus.edu.sg, started at Mon Nov 20 12:07:15 AM +08 2023
+Job is running on soctf-pdc-014.d1.comp.nus.edu.sg, started at Mon Nov 20 12:07:15 AM +08 2023
+Job is running on soctf-pdc-014.d1.comp.nus.edu.sg, started at Mon Nov 20 12:07:15 AM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-013.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/118500.txt
+Running...
++ tee /tmp/118500.txt
++ mpirun --map-by core --bind-to core ./distr-sched 16 1 2 0.10 tests/tinkywinky.in
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 0ms of 10831ms (0.00000) - completed: 0 0 0 0 0
+Rank 1: 9310ms of 10820ms (0.86044) - completed: 8 7 7 5 8
+Rank 2: 9833ms of 10820ms (0.90878) - completed: 2 7 10 7 6
+Rank 3: 9462ms of 10820ms (0.87449) - completed: 9 6 10 4 7
+Rank 4: 8677ms of 10820ms (0.80194) - completed: 4 5 10 8 8
+Rank 5: 4430ms of 10820ms (0.40943) - completed: 1 2 3 10 3
+Rank 6: 4113ms of 10820ms (0.38013) - completed: 5 9 6 2 5
+Rank 7: 3337ms of 10820ms (0.30841) - completed: 6 1 2 1 1
+Overall: 49162ms of 86571ms (0.56788) - completed: 35 37 48 37 38
+FINAL RUNTIME: 10831ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/tinkywinky_16_1_2_0.10.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[35, 37, 48, 37, 38]
+	Actual completed tasks:		[35, 37, 48, 37, 38]
+
+---> Sequential runtime:	44185 ms (extracted from reference output file tests/tinkywinky_16_1_2_0.10.out)
+---> Your runtime:		10831 ms
+---> Speedup:			4.079494044871203x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.

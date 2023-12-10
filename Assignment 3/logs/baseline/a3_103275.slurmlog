@@ -1,0 +1,85 @@
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Job is running on soctf-pdc-006.d1.comp.nus.edu.sg, started at Fri Nov 17 11:36:51 PM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-005.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/103275.txt
+Running...
++ tee /tmp/103275.txt
++ mpirun --map-by core --bind-to core ./distr-sched 5 2 2 0.00 tests/lala.in
+Rank 7 completed
+Rank 8 completed
+Rank 9 completed
+Rank 0 completed
+Rank 1 completed
+Rank 2 completed
+Rank 3 completed
+Rank 4 completed
+Rank 5 completed
+Rank 6 completed
+Rank 19 completed
+Rank 10 completed
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 9047ms of 20841ms (0.43410) - completed: 5 4 4 2 2
+Rank 1: 5531ms of 20851ms (0.26526) - completed: 4 3 2 6 2
+Rank 2: 3226ms of 20851ms (0.15472) - completed: 1 5 1 6 4
+Rank 3: 5088ms of 20851ms (0.24402) - completed: 3 4 3 4 3
+Rank 4: 3387ms of 20852ms (0.16243) - completed: 5 5 1 3 3
+Rank 5: 2589ms of 20851ms (0.12417) - completed: 3 2 1 6 4
+Rank 6: 9048ms of 20851ms (0.43394) - completed: 3 3 4 1 5
+Rank 7: 7104ms of 20851ms (0.34070) - completed: 2 1 6 2 5
+Rank 8: 2593ms of 20841ms (0.12442) - completed: 11 3 1 0 1
+Rank 9: 1847ms of 20851ms (0.08858) - completed: 3 6 1 4 2
+Rank 10: 7245ms of 20841ms (0.34763) - completed: 3 2 5 3 2
+Rank 11: 2801ms of 20841ms (0.13440) - completed: 2 4 1 3 5
+Rank 11 completed
+Rank 12: 3704ms of 20841ms (0.17773) - completed: 2 0 2 4 7
+Rank 13: 6466ms of 20841ms (0.31025) - completed: 2 3 3 4 3
+Rank 14: 4848ms of 20841ms (0.23262) - completed: 2 6 3 2 2
+Rank 15: 5008ms of 20841ms (0.24030) - completed: 3 2 3 3 4
+Rank 16: 13134ms of 20841ms (0.63020) - completed: 6 2 5 2 0
+Rank 17: 5022ms of 20841ms (0.24097) - completed: 1 2 3 3 6
+Rank 18: 7375ms of 20841ms (0.35387) - completed: 3 5 2 3 2
+Rank 19: 3105ms of 20841ms (0.14899) - completed: 4 0 1 6 4
+Overall: 108168ms of 416901ms (0.25946) - completed: 68 62 52 67 66
+FINAL RUNTIME: 20841ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 12 completed
+Rank 13 completed
+Rank 14 completed
+Rank 15 completed
+Rank 16 completed
+Rank 17 completed
+Rank 18 completed
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/lala_5_2_2_0.00.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[68, 62, 52, 67, 66]
+	Actual completed tasks:		[68, 62, 52, 67, 66]
+
+---> Sequential runtime:	58453 ms (extracted from reference output file tests/lala_5_2_2_0.00.out)
+---> Your runtime:		20841 ms
+---> Speedup:			2.8047118660333x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.

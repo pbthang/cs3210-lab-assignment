@@ -1,0 +1,74 @@
+Job is running on xgph9, started at Tue Oct 24 08:51:10 PM +08 2023
+Tue Oct 24 20:51:10 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.104.12             Driver Version: 535.104.12   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  | 00000000:98:00.0 Off |                   On |
+| N/A   41C    P0              45W / 300W |     87MiB / 81920MiB |     N/A      Default |
+|                                         |                      |              Enabled |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| MIG devices:                                                                          |
++------------------+--------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                   Memory-Usage |        Vol|      Shared           |
+|      ID  ID  Dev |                     BAR1-Usage | SM     Unc| CE ENC DEC OFA JPG    |
+|                  |                                |        ECC|                       |
+|==================+================================+===========+=======================|
+|  0    7   0   0  |              12MiB /  9728MiB  | 14      0 |  1   0    0    0    0 |
+|                  |               0MiB / 16383MiB  |           |                       |
++------------------+--------------------------------+-----------+-----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Running make to compile your code...
+/usr/local/cuda/bin/nvcc -std c++17 -O3 -lineinfo -arch=native -o scanner src/kernel.cu src/common.cpp
+/usr/local/cuda/bin/nvcc -G -std c++17 -O3 -arch=native -o scanner-debug src/kernel.cu src/common.cpp
+Running!
+loaded 1500 signature(s), 1 input file(s)
+cuda stats:
+  # of SMs: 14
+  global memory: 9728.00 MB
+  shared mem per block: 49152 bytes
+  constant memory: 65536 bytes
+cache hash: 6a6632842a73f136e87e25e4ceb4738bd345a24b3ba71834d7ea94d2745b04c0
+cached results up to date
+
+running your implementation...
+ideally, this should not take so long (:
+time to beat: 416.9ms
+-------------------------
+false positives:
+none
+-------------------------
+false negatives:
+none
+-------------------------
+
+summary:
+  true pos:    2
+  false pos:   0
+  false neg:   0
+
+time taken: 16.549s vs 416.9ms
+speedup: 0.025x
+F-beta score not applicable.
+
+Checking whether parallel speedup is valid: hostname: xgph9, num cpus: 2
+WARNING - parallel speedup has not been calculated on an xgpg node using all CPUs, so this result is not valid!
+Parallel speedup (for bonus, assuming this is a valid run): 0.014x
+
+
+====> Finished running.
+
+
+Job completed at Tue Oct 24 08:51:33 PM +08 2023

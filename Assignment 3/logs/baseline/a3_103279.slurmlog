@@ -1,0 +1,49 @@
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:30:30 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:30:30 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:30:30 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:30:30 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:30:30 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:30:30 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:30:30 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:30:30 PM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-012.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/103279.txt
+Running...
++ tee /tmp/103279.txt
++ mpirun --map-by core --bind-to core ./distr-sched 5 3 5 0.50 tests/dipsy.in
+Rank 3 completed
+Rank 0 completed
+Rank 1 completed
+Rank 2 completed
+Rank 4 completed
+Rank 5 completed
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 14398ms of 32329ms (0.44536) - completed: 32 18 12 24 22
+Rank 6 completed
+Rank 1: 24867ms of 32319ms (0.76942) - completed: 28 18 18 23 20
+Rank 2: 15382ms of 32319ms (0.47594) - completed: 23 23 14 29 17
+Rank 3: 23296ms of 32319ms (0.72081) - completed: 24 24 20 17 20
+Rank 4: 13089ms of 32319ms (0.40499) - completed: 23 22 14 20 26
+Rank 5: 24332ms of 32319ms (0.75287) - completed: 20 19 19 19 28
+Rank 6: 31156ms of 32319ms (0.96401) - completed: 21 17 27 17 23
+Rank 7: 18936ms of 32319ms (0.58591) - completed: 14 26 20 21 22
+Overall: 165456ms of 258562ms (0.63991) - completed: 185 167 144 170 178
+FINAL RUNTIME: 32329ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 7 completed
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/dipsy_5_3_5_0.50.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[185, 167, 144, 170, 178]
+	Actual completed tasks:		[185, 167, 144, 170, 178]
+
+---> Sequential runtime:	145217 ms (extracted from reference output file tests/dipsy_5_3_5_0.50.out)
+---> Your runtime:		32329 ms
+---> Speedup:			4.491849423118563x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.

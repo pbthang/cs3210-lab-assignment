@@ -1,0 +1,92 @@
+Job is running on xgph4, started at Wed Oct 25 09:23:54 PM +08 2023
+Wed Oct 25 21:23:54 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.104.12             Driver Version: 535.104.12   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe          On  | 00000000:98:00.0 Off |                   On |
+| N/A   41C    P0              44W / 300W |     87MiB / 81920MiB |     N/A      Default |
+|                                         |                      |              Enabled |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| MIG devices:                                                                          |
++------------------+--------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                   Memory-Usage |        Vol|      Shared           |
+|      ID  ID  Dev |                     BAR1-Usage | SM     Unc| CE ENC DEC OFA JPG    |
+|                  |                                |        ECC|                       |
+|==================+================================+===========+=======================|
+|  0    7   0   0  |              12MiB /  9728MiB  | 14      0 |  1   0    0    0    0 |
+|                  |               0MiB / 16383MiB  |           |                       |
++------------------+--------------------------------+-----------+-----------------------+
+|  0    8   0   1  |              12MiB /  9728MiB  | 14      0 |  1   0    0    0    0 |
+|                  |               0MiB / 16383MiB  |           |                       |
++------------------+--------------------------------+-----------+-----------------------+
+|  0    9   0   2  |              12MiB /  9728MiB  | 14      0 |  1   0    0    0    0 |
+|                  |               0MiB / 16383MiB  |           |                       |
++------------------+--------------------------------+-----------+-----------------------+
+|  0   10   0   3  |              12MiB /  9728MiB  | 14      0 |  1   0    0    0    0 |
+|                  |               0MiB / 16383MiB  |           |                       |
++------------------+--------------------------------+-----------+-----------------------+
+|  0   11   0   4  |              12MiB /  9728MiB  | 14      0 |  1   0    0    0    0 |
+|                  |               0MiB / 16383MiB  |           |                       |
++------------------+--------------------------------+-----------+-----------------------+
+|  0   12   0   5  |              12MiB /  9728MiB  | 14      0 |  1   0    0    0    0 |
+|                  |               0MiB / 16383MiB  |           |                       |
++------------------+--------------------------------+-----------+-----------------------+
+|  0   13   0   6  |              12MiB /  9728MiB  | 14      0 |  1   0    0    0    0 |
+|                  |               0MiB / 16383MiB  |           |                       |
++------------------+--------------------------------+-----------+-----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Running!
+loaded 2000 signature(s), 11 input file(s)
+cuda stats:
+  # of SMs: 14
+  global memory: 9728.00 MB
+  shared mem per block: 49152 bytes
+  constant memory: 65536 bytes
+cache hash: 351a4206b65ec82d44e56a77993fc73555ba559d3b1fdb4581f0f2acffd4a490
+cached results up to date
+
+running your implementation...
+ideally, this should not take so long (:
+time to beat: 37.629s
+-------------------------
+false positives:
+none
+-------------------------
+false negatives:
+none
+-------------------------
+
+summary:
+  true pos:    20
+  false pos:   0
+  false neg:   0
+
+time taken: 848.5ms vs 37.629s
+speedup: 44.348x
+F-beta = 1.0000
+
+Checking whether parallel speedup is valid: hostname: xgph4, num cpus: 64
+WARNING - parallel speedup has not been calculated on an xgpg node using all CPUs, so this result is not valid!
+Parallel speedup (for bonus, assuming this is a valid run): 22.255x
+
+
+====> Finished running.
+
+
+Job completed at Wed Oct 25 09:23:56 PM +08 2023
+/var/lib/slurm/slurmd/job93594/slurm_script: line 76: cuda-memcheck: command not found

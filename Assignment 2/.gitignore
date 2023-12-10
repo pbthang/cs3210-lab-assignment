@@ -1,0 +1,5 @@
+scanner
+scanner-debug
+cached-results.txt
+*.nsys-rep
+*.sqlite

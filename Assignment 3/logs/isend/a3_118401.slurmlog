@@ -1,0 +1,65 @@
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:20 AM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-004.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/118401.txt
+Running...
++ tee /tmp/118401.txt
++ mpirun --map-by core --bind-to core ./distr-sched 16 1 2 0.10 tests/tinkywinky.in
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Rank 1: 14969ms of 15011ms (0.99720) - completed: 5 2 7 3 6
+Rank 2: 14710ms of 15011ms (0.97995) - completed: 8 7 9 9 7
+Rank 3: 14402ms of 15011ms (0.95943) - completed: 2 6 9 5 2
+Rank 4: 10151ms of 15011ms (0.67624) - completed: 3 8 6 7 8
+Rank 5: 7600ms of 15020ms (0.50599) - completed: 2 6 5 4 4
+Rank 6: 4962ms of 15011ms (0.33056) - completed: 9 1 2 4 5
+Rank 7: 5774ms of 15020ms (0.38442) - completed: 5 2 4 1 3
+Rank 8: 3930ms of 15001ms (0.26198) - completed: 0 1 4 2 0
+Rank 9: 2668ms of 15011ms (0.17774) - completed: 1 4 2 2 3
+Rank 10: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Rank 11: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Rank 12: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Rank 13: 0ms of 15009ms (0.00000) - completed: 0 0 0 0 0
+Rank 14: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Rank 15: 0ms of 15009ms (0.00000) - completed: 0 0 0 0 0
+Rank 16: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Rank 17: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Rank 18: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Rank 19: 0ms of 15001ms (0.00000) - completed: 0 0 0 0 0
+Overall: 79166ms of 300134ms (0.26377) - completed: 35 37 48 37 38
+FINAL RUNTIME: 15001ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/tinkywinky_16_1_2_0.10.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[35, 37, 48, 37, 38]
+	Actual completed tasks:		[35, 37, 48, 37, 38]
+
+---> Sequential runtime:	44185 ms (extracted from reference output file tests/tinkywinky_16_1_2_0.10.out)
+---> Your runtime:		15001 ms
+---> Speedup:			2.945470301979868x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.

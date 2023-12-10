@@ -1,0 +1,53 @@
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:43 AM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:43 AM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:43 AM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:43 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:19:44 AM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-005.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/118637.txt
+Running...
++ tee /tmp/118637.txt
++ mpirun --map-by core --bind-to core ./distr-sched 12 0 10 0.16 tests/thesun.in
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 0ms of 32260ms (0.00000) - completed: 0 0 0 0 0
+Rank 1: 31117ms of 32260ms (0.96457) - completed: 9 12 12 8 11
+Rank 2: 30240ms of 32260ms (0.93738) - completed: 30 34 18 24 18
+Rank 3: 31482ms of 32240ms (0.97649) - completed: 20 12 20 23 10
+Rank 4: 30043ms of 32249ms (0.93159) - completed: 15 11 16 17 16
+Rank 5: 29414ms of 32249ms (0.91209) - completed: 25 13 19 25 16
+Rank 6: 30365ms of 32239ms (0.94187) - completed: 17 18 16 18 24
+Rank 7: 29159ms of 32260ms (0.90387) - completed: 25 18 18 20 11
+Rank 8: 29479ms of 32259ms (0.91382) - completed: 24 23 17 13 19
+Rank 9: 29252ms of 32260ms (0.90676) - completed: 18 18 18 7 16
+Rank 10: 29089ms of 32240ms (0.90226) - completed: 25 20 32 36 23
+Rank 11: 28646ms of 32240ms (0.88852) - completed: 24 31 27 20 22
+Rank 12: 29712ms of 32250ms (0.92130) - completed: 27 28 23 25 33
+Rank 13: 29602ms of 32250ms (0.91789) - completed: 29 32 25 25 29
+Overall: 387600ms of 451516ms (0.85844) - completed: 288 270 261 261 248
+FINAL RUNTIME: 32260ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/thesun_12_0_10_0.16.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[288, 270, 261, 261, 248]
+	Actual completed tasks:		[288, 270, 261, 261, 248]
+
+---> Sequential runtime:	259109 ms (extracted from reference output file tests/thesun_12_0_10_0.16.out)
+---> Your runtime:		32260 ms
+---> Speedup:			8.03189708617483x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.

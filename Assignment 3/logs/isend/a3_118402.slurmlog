@@ -1,0 +1,65 @@
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-005.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Job is running on soctf-pdc-004.d1.comp.nus.edu.sg, started at Mon Nov 20 12:02:50 AM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-004.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/118402.txt
+Running...
++ tee /tmp/118402.txt
++ mpirun --map-by core --bind-to core ./distr-sched 5 3 5 0.50 tests/dipsy.in
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 0ms of 17175ms (0.00000) - completed: 0 0 0 0 0
+Rank 1: 17111ms of 17185ms (0.99569) - completed: 9 11 11 8 13
+Rank 2: 14074ms of 17185ms (0.81897) - completed: 13 8 6 7 7
+Rank 3: 13254ms of 17185ms (0.77125) - completed: 11 10 8 9 7
+Rank 4: 14109ms of 17185ms (0.82101) - completed: 8 9 7 10 11
+Rank 5: 13683ms of 17186ms (0.79617) - completed: 13 17 9 8 13
+Rank 6: 12801ms of 17185ms (0.74489) - completed: 12 4 7 6 11
+Rank 7: 12970ms of 17190ms (0.75451) - completed: 7 8 8 9 5
+Rank 8: 12989ms of 17175ms (0.75627) - completed: 8 8 4 8 12
+Rank 9: 13422ms of 17185ms (0.78103) - completed: 3 0 7 1 1
+Rank 10: 12897ms of 17176ms (0.75087) - completed: 5 7 8 6 7
+Rank 11: 12787ms of 17176ms (0.74447) - completed: 5 4 8 4 8
+Rank 12: 14398ms of 17176ms (0.83826) - completed: 5 4 7 12 5
+Rank 13: 12973ms of 17177ms (0.75525) - completed: 10 8 9 7 9
+Rank 14: 15066ms of 17176ms (0.87715) - completed: 14 10 8 12 8
+Rank 15: 13351ms of 17181ms (0.77708) - completed: 4 6 7 12 5
+Rank 16: 12730ms of 17176ms (0.74115) - completed: 14 9 7 7 10
+Rank 17: 12393ms of 17176ms (0.72153) - completed: 18 17 7 17 17
+Rank 18: 13314ms of 17176ms (0.77515) - completed: 17 17 9 15 8
+Rank 19: 14351ms of 17176ms (0.83553) - completed: 9 10 7 12 21
+Overall: 258673ms of 343602ms (0.75283) - completed: 185 167 144 170 178
+FINAL RUNTIME: 17175ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/dipsy_5_3_5_0.50.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[185, 167, 144, 170, 178]
+	Actual completed tasks:		[185, 167, 144, 170, 178]
+
+---> Sequential runtime:	145217 ms (extracted from reference output file tests/dipsy_5_3_5_0.50.out)
+---> Your runtime:		17175 ms
+---> Speedup:			8.45513828238719x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.

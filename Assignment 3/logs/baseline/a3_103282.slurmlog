@@ -1,0 +1,49 @@
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:44 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:44 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:44 PM +08 2023
+Job is running on soctf-pdc-012.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:44 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:44 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:44 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:44 PM +08 2023
+Job is running on soctf-pdc-013.d1.comp.nus.edu.sg, started at Fri Nov 17 11:31:44 PM +08 2023
+Running make to compile your code...
+make: Nothing to be done for 'all'.
+Created temporary file on soctf-pdc-012.d1.comp.nus.edu.sg for job output evaluation after this run at /tmp/103282.txt
+Running...
++ tee /tmp/103282.txt
++ mpirun --map-by core --bind-to core ./distr-sched 12 0 10 0.16 tests/thesun.in
+Rank 3 completed
+Rank 0 completed
+Rank 1 completed
+Rank 2 completed
+Rank 4 completed
+Rank 5 completed
+Rank 6 completed
+Rank 7 completed
+========================== START EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
+Rank 0: 41413ms of 63693ms (0.65020) - completed: 46 38 37 32 18
+Rank 1: 48727ms of 63683ms (0.76515) - completed: 40 31 45 28 27
+Rank 2: 35730ms of 63683ms (0.56106) - completed: 34 33 32 31 38
+Rank 3: 42332ms of 63683ms (0.66473) - completed: 36 31 34 31 33
+Rank 4: 36921ms of 63683ms (0.57976) - completed: 29 31 33 40 32
+Rank 5: 30124ms of 63683ms (0.47303) - completed: 39 41 23 27 35
+Rank 6: 36789ms of 63683ms (0.57769) - completed: 39 29 34 29 32
+Rank 7: 23740ms of 63683ms (0.37278) - completed: 25 36 23 43 33
+Overall: 295776ms of 509474ms (0.58055) - completed: 288 270 261 261 248
+FINAL RUNTIME: 63693ms
+========================== END EXECUTION METRIC BLOCK FOR VERIFICATION ==========================
++ set +x
+Evaluating your results...
+>>> check.py running tests on your output against tests/thesun_12_0_10_0.16.out as a quick validation of your program.
+>>> Note that check.py is not guaranteed to be complete or entirely correct! We will not intentionally include any errors, however.
+
+✓✓✓ check.py Execution Metrics test passed. The number of tasks of each type completed by your program matches what is expected.
+	Expected completed tasks:	[288, 270, 261, 261, 248]
+	Actual completed tasks:		[288, 270, 261, 261, 248]
+
+---> Sequential runtime:	259109 ms (extracted from reference output file tests/thesun_12_0_10_0.16.out)
+---> Your runtime:		63693 ms
+---> Speedup:			4.068092255035875x
+
+NOTE: You are not running in DEBUG=1 mode, so we cannot check the execution trace.
+Therefore, we cannot ensure complete correctness of your code.
